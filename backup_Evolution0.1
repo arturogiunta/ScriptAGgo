@@ -1,0 +1,25 @@
+#SCRIPT DI BACKUP di Evolution 
+!/bin/bash
+#------------------------
+#SCRIPT DI BACKUP ;LISTA PACCHETTI
+#### Evolution è il programma di posta di Gnome. 
+#### Lo script richiede l’inserimento a mano di alcuni dati che non posso riportare sul post pubblico. 
+#### Nel codice sono precedeuti dalla riga ####@
+####
+####
+#### DATI UTILI A DISTINGUERE IL BACKUP
+#### INSERIRE MANUALMENTE
+####@ solo un numero, serve a me per seguire le modifiche al codice
+VERSIONE="0.1" 
+# modificato il dom 03 apr 2016 15:53:35 CEST 
+####
+####@ inserire il vostro nome utente o una qualunque sequenza per contrassegnare i file creati
+USER="nome"
+####
+DATE=`date +%Y%m%d`
+####
+####
+####
+tar -cvzf DIRECTORY DI DESTINAZIONE $DATE-$USER-evolution-backup.tar.gz ~/.local/share/evolution ~/.config/evolution
+#
+#END
