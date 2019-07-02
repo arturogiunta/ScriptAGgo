@@ -1,0 +1,34 @@
+#SCRIPT DI BACKUP 05/05/2012 
+## VERSIONE 0.2
+### modificato il 22/06/2012 
+#!/bin/bash
+#------------------------
+# attenzione si deve inserire ~/ per le cartelle
+# il carattere \ serve ad andare a capo
+DATE=`date +%Y%m%d`
+#####
+tar -cvf $DATE-claws-mail.tar ~/.claws-mail/ ~/.Mail/
+gzip $DATE-claws-mail.tar
+###########################
+#########
+#########
+#########
+#########
+#########
+#########
+dpkg --get-selections > $DATE-lista_pacchetti.txt
+###########################
+#########
+#########
+#########
+#########
+#########
+#########
+#########
+tar -cvf $DATE-files-di-configurazione.tar ~/.config ~/.gftp ~/.Skype/ ~/.stardict/ ~/bin/ ~/.bashrc ~/.purple/ ~/.libreoffice/3/user
+#########
+xfburn -d $DATE-claws-mail.tar.gz $DATE-lista_pacchetti.txt ~/archivio/ $DATE-files-di-configurazione.tar
+###~/.newsbeuter ~/.rssowl2/
+#### ~/.osmo/ 
+# pidgin sta nella cartella purple
+# se hai brasero -d blablabla
