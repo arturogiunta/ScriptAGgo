@@ -1,0 +1,3 @@
+#SCRIPT DI LOG CONNESSIONE
+#!/bin/bash
+date >> ~/speedtest.log; speedtest-cli --no-download >> ~/speedtest.log
